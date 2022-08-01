@@ -11,7 +11,7 @@
         <!--Log-in-->
         <scene sceneID="sUD-82-JrI">
             <objects>
-                <viewController id="tsu-VB-YYj" customClass="LoginViewController" customModule="build_your_vocabulary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tsu-VB-YYj" customClass="LoginViewController" customModule="BuildYourVocabulary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zun-WH-8GG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -19,7 +19,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Ide-70-fuT">
                                 <rect key="frame" x="69.5" y="387.5" width="275" height="121.5"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2xS-FW-r4j">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="b@h.com" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2xS-FW-r4j">
                                         <rect key="frame" x="5" y="0.0" width="265" height="35"/>
                                         <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -27,7 +27,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SF5-gF-Imy">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SF5-gF-Imy">
                                         <rect key="frame" x="5" y="42" width="265" height="34"/>
                                         <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="textColor" red="0.2196078431372549" green="0.2196078431372549" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -85,12 +85,12 @@
         <!--Vocabulary-->
         <scene sceneID="NbQ-9P-gku">
             <objects>
-                <viewController id="HnC-48-GPG" customClass="VocabularyViewController" customModule="build_your_vocabulary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HnC-48-GPG" customClass="VocabularyViewController" customModule="BuildYourVocabulary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jdz-1X-dDl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aaz-88-Ckl">
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oxp-B4-0T4">
                                 <rect key="frame" x="0.0" y="140" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -101,17 +101,17 @@
                     </view>
                     <navigationItem key="navigationItem" title="Vocabulary" id="2Rf-0C-f4D"/>
                     <connections>
-                        <outlet property="searchedWord" destination="aaz-88-Ckl" id="IWA-vV-PYQ"/>
+                        <outlet property="mySearchBar" destination="Oxp-B4-0T4" id="CUv-ue-IL3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DaA-IR-Zla" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2419" y="100"/>
+            <point key="canvasLocation" x="2418.840579710145" y="99.776785714285708"/>
         </scene>
         <!--WelcomeViewController-->
         <scene sceneID="sdm-zm-fZK">
             <objects>
-                <viewController title="WelcomeViewController" id="paH-gz-9Hs" customClass="WelcomeViewController" customModule="build_your_vocabulary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="WelcomeViewController" id="paH-gz-9Hs" customClass="WelcomeViewController" customModule="BuildYourVocabulary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZfX-iU-Jb3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -172,7 +172,7 @@
         <!--Register-->
         <scene sceneID="ch9-b8-oXD">
             <objects>
-                <viewController id="93j-dv-4DL" customClass="RegisterViewController" customModule="build_your_vocabulary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="93j-dv-4DL" customClass="RegisterViewController" customModule="BuildYourVocabulary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qYS-zJ-Mox">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -267,7 +267,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tF4-Vy-970"/>
+        <segue reference="tDd-HR-3gg"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemGray2Color">

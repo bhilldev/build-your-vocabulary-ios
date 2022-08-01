@@ -7,14 +7,18 @@
 
 import UIKit
 
-class WelcomeViewController: UIViewController {
-
+class WelcomeViewController: UIViewController, UISearchBarDelegate {
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         title = "Welcome"
+       
     }
-
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print("hello")
+    }
 
 }
 

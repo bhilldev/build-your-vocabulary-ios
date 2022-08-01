@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0520F3CC39C9560E5499ABE9 /* Pods_BuildYourVocabulary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D36D1593147EE2D84F089D8 /* Pods_BuildYourVocabulary.framework */; };
 		B74FD2D9283D2DE400DABD10 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74FD2D8283D2DE400DABD10 /* RegisterViewController.swift */; };
 		B74FD2DB283D2E0B00DABD10 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74FD2DA283D2E0B00DABD10 /* LoginViewController.swift */; };
 		B74FD2DF283D39EA00DABD10 /* VocabularyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74FD2DE283D39EA00DABD10 /* VocabularyViewController.swift */; };
+		B760877C286E26B9000DCCFA /* WordrData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B760877B286E26B9000DCCFA /* WordrData.swift */; };
 		B7957510283D3CEF00371379 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B795750F283D3CEF00371379 /* GoogleService-Info.plist */; };
 		B7957513283D43A900371379 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B7957512283D43A900371379 /* FirebaseAuth */; };
 		B7C03EF0283C06D9006EE412 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C03EEF283C06D9006EE412 /* AppDelegate.swift */; };
@@ -20,16 +20,15 @@
 		B7C03EFA283C06D9006EE412 /* build_your_vocabulary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B7C03EF8283C06D9006EE412 /* build_your_vocabulary.xcdatamodeld */; };
 		B7C03EFC283C06DA006EE412 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7C03EFB283C06DA006EE412 /* Assets.xcassets */; };
 		B7C03EFF283C06DA006EE412 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7C03EFD283C06DA006EE412 /* LaunchScreen.storyboard */; };
-		B7EAF056286CBEA300AFA2E8 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EAF055286CBEA300AFA2E8 /* API.swift */; };
+		B7C70B4C2875ED99002B7631 /* WordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C70B4B2875ED99002B7631 /* WordModel.swift */; };
+		B7EAF056286CBEA300AFA2E8 /* WordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EAF055286CBEA300AFA2E8 /* WordManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1D36D1593147EE2D84F089D8 /* Pods_BuildYourVocabulary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BuildYourVocabulary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		291E0ECDEFFB8AEFE93A5BD9 /* Pods-BuildYourVocabulary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuildYourVocabulary.debug.xcconfig"; path = "Target Support Files/Pods-BuildYourVocabulary/Pods-BuildYourVocabulary.debug.xcconfig"; sourceTree = "<group>"; };
-		879D2E0E7E094BE435483356 /* Pods-BuildYourVocabulary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuildYourVocabulary.release.xcconfig"; path = "Target Support Files/Pods-BuildYourVocabulary/Pods-BuildYourVocabulary.release.xcconfig"; sourceTree = "<group>"; };
 		B74FD2D8283D2DE400DABD10 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		B74FD2DA283D2E0B00DABD10 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B74FD2DE283D39EA00DABD10 /* VocabularyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyViewController.swift; sourceTree = "<group>"; };
+		B760877B286E26B9000DCCFA /* WordrData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordrData.swift; sourceTree = "<group>"; };
 		B795750F283D3CEF00371379 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B7C03EEC283C06D9006EE412 /* BuildYourVocabulary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuildYourVocabulary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7C03EEF283C06D9006EE412 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,7 +39,8 @@
 		B7C03EFB283C06DA006EE412 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B7C03EFE283C06DA006EE412 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B7C03F00283C06DA006EE412 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B7EAF055286CBEA300AFA2E8 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		B7C70B4B2875ED99002B7631 /* WordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordModel.swift; sourceTree = "<group>"; };
+		B7EAF055286CBEA300AFA2E8 /* WordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,22 +49,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7957513283D43A900371379 /* FirebaseAuth in Frameworks */,
-				0520F3CC39C9560E5499ABE9 /* Pods_BuildYourVocabulary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4D39ADC57DC6ADA75C1C229F /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				291E0ECDEFFB8AEFE93A5BD9 /* Pods-BuildYourVocabulary.debug.xcconfig */,
-				879D2E0E7E094BE435483356 /* Pods-BuildYourVocabulary.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		B74FD2DC283D2E1E00DABD10 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,8 +79,6 @@
 			children = (
 				B7C03EEE283C06D9006EE412 /* BuildYourVocabulary */,
 				B7C03EED283C06D9006EE412 /* Products */,
-				4D39ADC57DC6ADA75C1C229F /* Pods */,
-				EE1619DC64A4091BD56C00D9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,17 +110,11 @@
 		B7EAF054286CBE8500AFA2E8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B7EAF055286CBEA300AFA2E8 /* API.swift */,
+				B7EAF055286CBEA300AFA2E8 /* WordManager.swift */,
+				B760877B286E26B9000DCCFA /* WordrData.swift */,
+				B7C70B4B2875ED99002B7631 /* WordModel.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		EE1619DC64A4091BD56C00D9 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1D36D1593147EE2D84F089D8 /* Pods_BuildYourVocabulary.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,11 +124,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B7C03F03283C06DA006EE412 /* Build configuration list for PBXNativeTarget "BuildYourVocabulary" */;
 			buildPhases = (
-				8ECAD709AAA73A547288ED04 /* [CP] Check Pods Manifest.lock */,
 				B7C03EE8283C06D9006EE412 /* Sources */,
 				B7C03EE9283C06D9006EE412 /* Frameworks */,
 				B7C03EEA283C06D9006EE412 /* Resources */,
-				B30F3CE6B272D60199445CA4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -210,61 +190,21 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		8ECAD709AAA73A547288ED04 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BuildYourVocabulary-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B30F3CE6B272D60199445CA4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BuildYourVocabulary/Pods-BuildYourVocabulary-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BuildYourVocabulary/Pods-BuildYourVocabulary-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BuildYourVocabulary/Pods-BuildYourVocabulary-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		B7C03EE8283C06D9006EE412 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B74FD2DB283D2E0B00DABD10 /* LoginViewController.swift in Sources */,
+				B760877C286E26B9000DCCFA /* WordrData.swift in Sources */,
 				B7C03EF4283C06D9006EE412 /* WelcomeViewController.swift in Sources */,
 				B74FD2D9283D2DE400DABD10 /* RegisterViewController.swift in Sources */,
 				B74FD2DF283D39EA00DABD10 /* VocabularyViewController.swift in Sources */,
 				B7C03EF0283C06D9006EE412 /* AppDelegate.swift in Sources */,
 				B7C03EF2283C06D9006EE412 /* SceneDelegate.swift in Sources */,
-				B7EAF056286CBEA300AFA2E8 /* API.swift in Sources */,
+				B7EAF056286CBEA300AFA2E8 /* WordManager.swift in Sources */,
 				B7C03EFA283C06D9006EE412 /* build_your_vocabulary.xcdatamodeld in Sources */,
+				B7C70B4C2875ED99002B7631 /* WordModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,7 +346,6 @@
 		};
 		B7C03F04283C06DA006EE412 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 291E0ECDEFFB8AEFE93A5BD9 /* Pods-BuildYourVocabulary.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -435,7 +374,6 @@
 		};
 		B7C03F05283C06DA006EE412 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 879D2E0E7E094BE435483356 /* Pods-BuildYourVocabulary.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
