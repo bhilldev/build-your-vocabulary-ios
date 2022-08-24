@@ -16,7 +16,7 @@ struct WordManager {
     let wordUrl = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/"
     var delegate: WordManagerDelegate?
     
-    func fetchWordDefinition(word: String) {
+    func fetchWordDefinition(word: String){
         let urlString = "\(wordUrl)\(word)?key=35d770ac-3c83-43a4-9aff-2bee78c32610"
         performRequest(with: urlString)
     }
