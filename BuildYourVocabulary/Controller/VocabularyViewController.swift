@@ -39,7 +39,12 @@ class VocabularyViewController: UIViewController, UISearchBarDelegate, UITableVi
         
         searchBarWord = mySearchBar.text!
         wordManager.fetchWordDefinition(word: mySearchBar.text!)
-       
+        mySearchBar.endEditing(true)
+    }
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        if errorMessage.isHidden == false {
+            errorMessage.isHidden = true
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -102,9 +107,9 @@ extension VocabularyViewController: WordManagerDelegate {
         DispatchQueue.main.async {
             self.errorMessage.isHidden = false
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
-            self.errorMessage.isHidden = true
-        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+//            self.errorMessage.isHidden = true
+//        }
 
        // print("error is \(error)")
     }
