@@ -119,6 +119,13 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Word not found. Try again..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="juD-Nw-PNe">
+                                <rect key="frame" x="93" y="302" width="229" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.60784316059999999" green="0.109803915" blue="0.1215686351" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Z07-Qx-jYY"/>
                         <color key="backgroundColor" systemColor="systemRedColor"/>
@@ -131,6 +138,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Vocabulary" id="2Rf-0C-f4D"/>
                     <connections>
+                        <outlet property="errorMessage" destination="juD-Nw-PNe" id="Tic-Oa-VqE"/>
                         <outlet property="mySearchBar" destination="Oxp-B4-0T4" id="CUv-ue-IL3"/>
                         <outlet property="tableView" destination="sCm-yw-Jkc" id="UTz-Xc-V2f"/>
                     </connections>

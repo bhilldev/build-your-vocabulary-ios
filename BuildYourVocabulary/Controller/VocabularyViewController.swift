@@ -14,14 +14,14 @@ struct cellData {
 }
 class VocabularyViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
     
+    var wordManager = WordManager()
     var tableViewData = [cellData]()
+    var searchBarWord: String = ""
     
     @IBOutlet weak var mySearchBar: UISearchBar!
-    
+    @IBOutlet weak var errorMessage: UILabel!
     @IBOutlet weak var tableView: UITableView!
-    var wordManager = WordManager()
     
-    var wordArray = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,13 +36,10 @@ class VocabularyViewController: UIViewController, UISearchBarDelegate, UITableVi
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        var nextWord = cellData(opened: false, searchedWord: "", searchedWordDefinition: "")
-        nextWord.searchedWord = mySearchBar.text!
-        tableViewData.append(nextWord)
+        
+        searchBarWord = mySearchBar.text!
         wordManager.fetchWordDefinition(word: mySearchBar.text!)
-        wordArray.append(mySearchBar.text!)
-
-        tableView.reloadData()
+       
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -79,17 +76,37 @@ class VocabularyViewController: UIViewController, UISearchBarDelegate, UITableVi
             tableView.reloadSections(sections, with: .none)
         }
     }
+    func errorLabel() {
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+            label.center = CGPoint(x: 160, y: 285)
+            label.textAlignment = .center
+            label.text = "Word not found in dictionary..."
+
+            self.view.addSubview(label)
+        
+    }
     
 }
 
 extension VocabularyViewController: WordManagerDelegate {
     func didUpdateWord(_ wordManager: WordManager, word: WordModel) {
         DispatchQueue.main.async {
-            self.tableViewData[self.tableViewData.count-1].searchedWordDefinition = word.wordDefinition
+            var nextWord = cellData(opened: false, searchedWord: "", searchedWordDefinition: "")
+            nextWord.searchedWord = self.searchBarWord
+            nextWord.searchedWordDefinition = word.wordDefinition
+            self.tableViewData.append(nextWord)
+            self.tableView.reloadData()
         }
     }
     func didFailWithError(error: Error) {
-        print("error is \(error)")
+        DispatchQueue.main.async {
+            self.errorMessage.isHidden = false
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+            self.errorMessage.isHidden = true
+        }
+
+       // print("error is \(error)")
     }
 }
 
