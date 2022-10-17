@@ -48,13 +48,15 @@ class VocabularyViewController: UIViewController, UISearchBarDelegate, UITableVi
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
+        print("Number of sections is: \(tableViewData.count)")
         return tableViewData.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableViewData[section].opened == false {
             return 1
-        }else {
+        }
+        else {
             return 2
         }
     }
@@ -81,6 +83,14 @@ class VocabularyViewController: UIViewController, UISearchBarDelegate, UITableVi
             tableView.reloadSections(sections, with: .none)
         }
     }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            tableViewData.remove(at: indexPath.section)
+            let indexSet = IndexSet(arrayLiteral: indexPath.section)
+            tableView.deleteSections(indexSet, with: .automatic)
+        }
+    }
+    
     func errorLabel() {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
             label.center = CGPoint(x: 160, y: 285)
