@@ -48,7 +48,6 @@ class VocabularyViewController: UIViewController, UISearchBarDelegate, UITableVi
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        print("Number of sections is: \(tableViewData.count)")
         return tableViewData.count
     }
     
@@ -83,7 +82,18 @@ class VocabularyViewController: UIViewController, UISearchBarDelegate, UITableVi
             tableView.reloadSections(sections, with: .none)
         }
     }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        if indexPath.row % 2 == 0 {
+            return .delete
+        } else {
+            return .none
+        }
+    }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+
+        
         if editingStyle == UITableViewCell.EditingStyle.delete {
             tableViewData.remove(at: indexPath.section)
             let indexSet = IndexSet(arrayLiteral: indexPath.section)
@@ -91,15 +101,15 @@ class VocabularyViewController: UIViewController, UISearchBarDelegate, UITableVi
         }
     }
     
-    func errorLabel() {
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-            label.center = CGPoint(x: 160, y: 285)
-            label.textAlignment = .center
-            label.text = "Word not found in dictionary..."
-
-            self.view.addSubview(label)
-        
-    }
+//    func errorLabel() {
+//        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+//            label.center = CGPoint(x: 160, y: 285)
+//            label.textAlignment = .center
+//            label.text = "Word not found in dictionary..."
+//
+//            self.view.addSubview(label)
+//        
+//    }
     
 }
 
