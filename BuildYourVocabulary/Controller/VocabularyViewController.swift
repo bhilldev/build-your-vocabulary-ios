@@ -15,8 +15,11 @@ struct cellData {
 class VocabularyViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
     
     var wordManager = WordManager()
-    var tableViewData = [cellData]()
+    var tableViewData = [CdWord]()
     var searchBarWord: String = ""
+    
+    //Reference to managed object context
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     @IBOutlet weak var mySearchBar: UISearchBar!
     @IBOutlet weak var errorMessage: UILabel!
@@ -27,12 +30,25 @@ class VocabularyViewController: UIViewController, UISearchBarDelegate, UITableVi
         super.viewDidLoad()
         title = "Vocabulary"
         // Do any additional setup after loading the view.
+        
         wordManager.delegate = self
         
         mySearchBar.delegate = self
         tableView.dataSource = self
         tableView.delegate = self
+        fetchWords()
         
+    }
+    func fetchWords() {
+        do {
+            self.tableViewData = try context.fetch(CdWord.fetchRequest())
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        catch {
+            
+        }
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -95,9 +111,18 @@ class VocabularyViewController: UIViewController, UISearchBarDelegate, UITableVi
 
         
         if editingStyle == UITableViewCell.EditingStyle.delete {
-            tableViewData.remove(at: indexPath.section)
-            let indexSet = IndexSet(arrayLiteral: indexPath.section)
-            tableView.deleteSections(indexSet, with: .automatic)
+            //Which word to remove
+            let wordToRemove = tableViewData[indexPath.row]
+            //Remove the word
+            self.context.delete(wordToRemove)
+            do {
+                try self.context.save()
+            }
+            catch {
+                
+            }
+            //Save updated table
+            self.fetchWords()
         }
     }
     
@@ -116,11 +141,21 @@ class VocabularyViewController: UIViewController, UISearchBarDelegate, UITableVi
 extension VocabularyViewController: WordManagerDelegate {
     func didUpdateWord(_ wordManager: WordManager, word: WordModel) {
         DispatchQueue.main.async {
-            var nextWord = cellData(opened: false, searchedWord: "", searchedWordDefinition: "")
-            nextWord.searchedWord = self.searchBarWord
-            nextWord.searchedWordDefinition = word.wordDefinition
-            self.tableViewData.append(nextWord)
-            self.tableView.reloadData()
+            //Create word and definition object
+            var newWord = CdWord(context: self.context)
+            newWord.searchedWord = self.searchBarWord
+            newWord.searchedWordDefinition = word.wordDefinition
+            self.tableViewData.append(newWord)
+            
+            //Save the word
+            do {
+                try self.context.save()
+            }
+            catch {
+                
+            }
+            //Re-load words
+            self.fetchWords()
         }
     }
     func didFailWithError(error: Error) {

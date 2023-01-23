@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B70737682935381400655C53 /* CdWord+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70737662935381400655C53 /* CdWord+CoreDataClass.swift */; };
+		B70737692935381400655C53 /* CdWord+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70737672935381400655C53 /* CdWord+CoreDataProperties.swift */; };
 		B74FD2D9283D2DE400DABD10 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74FD2D8283D2DE400DABD10 /* RegisterViewController.swift */; };
 		B74FD2DB283D2E0B00DABD10 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74FD2DA283D2E0B00DABD10 /* LoginViewController.swift */; };
 		B74FD2DF283D39EA00DABD10 /* VocabularyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74FD2DE283D39EA00DABD10 /* VocabularyViewController.swift */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B70737662935381400655C53 /* CdWord+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CdWord+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B70737672935381400655C53 /* CdWord+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CdWord+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B74FD2D8283D2DE400DABD10 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		B74FD2DA283D2E0B00DABD10 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B74FD2DE283D39EA00DABD10 /* VocabularyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +114,8 @@
 		B7EAF054286CBE8500AFA2E8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B70737662935381400655C53 /* CdWord+CoreDataClass.swift */,
+				B70737672935381400655C53 /* CdWord+CoreDataProperties.swift */,
 				B7EAF055286CBEA300AFA2E8 /* WordManager.swift */,
 				B760877B286E26B9000DCCFA /* WordrData.swift */,
 				B7C70B4B2875ED99002B7631 /* WordModel.swift */,
@@ -195,6 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B70737682935381400655C53 /* CdWord+CoreDataClass.swift in Sources */,
 				B74FD2DB283D2E0B00DABD10 /* LoginViewController.swift in Sources */,
 				B760877C286E26B9000DCCFA /* WordrData.swift in Sources */,
 				B7C03EF4283C06D9006EE412 /* WelcomeViewController.swift in Sources */,
@@ -202,6 +209,7 @@
 				B74FD2DF283D39EA00DABD10 /* VocabularyViewController.swift in Sources */,
 				B7C03EF0283C06D9006EE412 /* AppDelegate.swift in Sources */,
 				B7C03EF2283C06D9006EE412 /* SceneDelegate.swift in Sources */,
+				B70737692935381400655C53 /* CdWord+CoreDataProperties.swift in Sources */,
 				B7EAF056286CBEA300AFA2E8 /* WordManager.swift in Sources */,
 				B7C03EFA283C06D9006EE412 /* build_your_vocabulary.xcdatamodeld in Sources */,
 				B7C70B4C2875ED99002B7631 /* WordModel.swift in Sources */,
