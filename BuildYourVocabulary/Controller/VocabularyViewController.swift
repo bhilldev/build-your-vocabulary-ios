@@ -36,6 +36,7 @@ class VocabularyViewController: UIViewController, UISearchBarDelegate, UITableVi
         mySearchBar.delegate = self
         tableView.dataSource = self
         tableView.delegate = self
+        self.tableView.backgroundColor = UIColor(hexString: "567189")
         fetchWords()
         
     }
@@ -80,10 +81,13 @@ class VocabularyViewController: UIViewController, UISearchBarDelegate, UITableVi
         if indexPath.row == 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else {return UITableViewCell()}
             cell.textLabel?.text = tableViewData[indexPath.section].searchedWord
+            cell.backgroundColor = UIColor(hexString: "CFB997")
         return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else {return UITableViewCell()}
             cell.textLabel?.text = tableViewData[indexPath.section].searchedWordDefinition
+            cell.backgroundColor = UIColor(hexString: "FAD6A5")
+            self.allowMultipleLines(tableViewCell: cell)
             return cell
         }
     }
@@ -135,7 +139,10 @@ class VocabularyViewController: UIViewController, UISearchBarDelegate, UITableVi
 //            self.view.addSubview(label)
 //        
 //    }
-    
+    func allowMultipleLines(tableViewCell: UITableViewCell) {
+        tableViewCell.textLabel?.numberOfLines = 0
+        tableViewCell.textLabel?.lineBreakMode = .byWordWrapping
+    }
 }
 
 extension VocabularyViewController: WordManagerDelegate {
