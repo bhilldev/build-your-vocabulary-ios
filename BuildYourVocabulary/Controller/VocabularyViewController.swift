@@ -7,16 +7,23 @@
 
 import UIKit
 
-struct cellData {
-    var opened = Bool()
-    var searchedWord = String()
-    var searchedWordDefinition = String()
-}
+
 class VocabularyViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
     
     var wordManager = WordManager()
     var tableViewData = [CdWord]()
     var searchBarWord: String = ""
+    
+    //Dark Blue: 567189, Light Blue: 7B8FA1, Dark Beige: CFB997 Light Beige: FAD6A5
+    let wordCellBackgroundColorHex = UIColor(hexString: "567189")
+    let definitionCellBackgroundColorHex = UIColor(hexString: "7B8FA1")
+    let tableViewBackgroundColorHex = UIColor(hexString: "567189")
+    
+    let searchBarBackgroundColorHex = UIColor(hexString: "567189")
+    let searchBarTextFieldBackgroundHex = UIColor(hexString: "7B8FA1")
+    
+    let wordCellTextColorHex = UIColor(hexString: "FAD6A5")
+    let definitionCellTextColorHex = UIColor(hexString: "FAD6A5")
     
     //Reference to managed object context
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -29,17 +36,40 @@ class VocabularyViewController: UIViewController, UISearchBarDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Vocabulary"
-        // Do any additional setup after loading the view.
-        
         wordManager.delegate = self
         
         mySearchBar.delegate = self
         tableView.dataSource = self
         tableView.delegate = self
-        self.tableView.backgroundColor = UIColor(hexString: "567189")
-        fetchWords()
+        
+        self.tableView.backgroundColor = tableViewBackgroundColorHex
+        
+        self.setSearchBarAppearance()
+        self.setNavBarAppearance()
+        self.fetchWords()
         
     }
+    
+    func setSearchBarAppearance() {
+        mySearchBar.barTintColor = searchBarBackgroundColorHex
+        mySearchBar.searchTextField.backgroundColor = searchBarTextFieldBackgroundHex
+    }
+    
+    func setNavBarAppearance() {
+        // This will change the navigation bar background color
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor(hexString: "567189")
+                
+        // This will alter the navigation bar title appearance
+        let titleAttribute = [NSAttributedString.Key.font:  UIFont.systemFont(ofSize: 25, weight: .bold), NSAttributedString.Key.foregroundColor: UIColor(hexString: "FAD6A5")]
+        
+        appearance.largeTitleTextAttributes = titleAttribute
+
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+    }
+    
     func fetchWords() {
         do {
             self.tableViewData = try context.fetch(CdWord.fetchRequest())
@@ -81,12 +111,15 @@ class VocabularyViewController: UIViewController, UISearchBarDelegate, UITableVi
         if indexPath.row == 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else {return UITableViewCell()}
             cell.textLabel?.text = tableViewData[indexPath.section].searchedWord
-            cell.backgroundColor = UIColor(hexString: "CFB997")
+            cell.backgroundColor = wordCellBackgroundColorHex
+            cell.textLabel?.textColor = wordCellTextColorHex
+        
         return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else {return UITableViewCell()}
             cell.textLabel?.text = tableViewData[indexPath.section].searchedWordDefinition
-            cell.backgroundColor = UIColor(hexString: "FAD6A5")
+            cell.backgroundColor = definitionCellBackgroundColorHex
+            cell.textLabel?.textColor = definitionCellTextColorHex
             self.allowMultipleLines(tableViewCell: cell)
             return cell
         }
