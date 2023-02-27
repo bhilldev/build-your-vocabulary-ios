@@ -78,7 +78,7 @@ class VocabularyViewController: UIViewController, UISearchBarDelegate, UITableVi
             }
         }
         catch {
-            
+            print("fetchwords error got caught")
         }
     }
     
@@ -163,15 +163,7 @@ class VocabularyViewController: UIViewController, UISearchBarDelegate, UITableVi
         }
     }
     
-//    func errorLabel() {
-//        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-//            label.center = CGPoint(x: 160, y: 285)
-//            label.textAlignment = .center
-//            label.text = "Word not found in dictionary..."
-//
-//            self.view.addSubview(label)
-//        
-//    }
+
     func allowMultipleLines(tableViewCell: UITableViewCell) {
         tableViewCell.textLabel?.numberOfLines = 0
         tableViewCell.textLabel?.lineBreakMode = .byWordWrapping
@@ -182,17 +174,16 @@ extension VocabularyViewController: WordManagerDelegate {
     func didUpdateWord(_ wordManager: WordManager, word: WordModel) {
         DispatchQueue.main.async {
             //Create word and definition object
-            var newWord = CdWord(context: self.context)
+            let newWord = CdWord(context: self.context)
             newWord.searchedWord = self.searchBarWord
             newWord.searchedWordDefinition = word.wordDefinition
             self.tableViewData.append(newWord)
-            
             //Save the word
             do {
                 try self.context.save()
             }
             catch {
-                
+                print("error got caught")
             }
             //Re-load words
             self.fetchWords()
@@ -200,14 +191,22 @@ extension VocabularyViewController: WordManagerDelegate {
     }
     func didFailWithError(error: Error) {
         DispatchQueue.main.async {
-            self.errorMessage.isHidden = false
+            let alert = UIAlertController(title: "Error", message: "Word not found. Try again!", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
-//            self.errorMessage.isHidden = true
-//        }
 
-       // print("error is \(error)")
     }
 }
 
 
+
+//    func errorLabel() {
+//        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+//            label.center = CGPoint(x: 160, y: 285)
+//            label.textAlignment = .center
+//            label.text = "Word not found in dictionary..."
+//
+//            self.view.addSubview(label)
+//
+//    }
