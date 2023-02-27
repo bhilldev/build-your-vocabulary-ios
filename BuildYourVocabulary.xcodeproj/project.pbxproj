@@ -24,6 +24,7 @@
 		B7C03EFC283C06DA006EE412 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7C03EFB283C06DA006EE412 /* Assets.xcassets */; };
 		B7C03EFF283C06DA006EE412 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7C03EFD283C06DA006EE412 /* LaunchScreen.storyboard */; };
 		B7C70B4C2875ED99002B7631 /* WordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C70B4B2875ED99002B7631 /* WordModel.swift */; };
+		B7E6920F29AD116E000D6164 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E6920E29AD116E000D6164 /* Constants.swift */; };
 		B7EAF056286CBEA300AFA2E8 /* WordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EAF055286CBEA300AFA2E8 /* WordManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		B7C03EFE283C06DA006EE412 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B7C03F00283C06DA006EE412 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7C70B4B2875ED99002B7631 /* WordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordModel.swift; sourceTree = "<group>"; };
+		B7E6920E29AD116E000D6164 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B7EAF055286CBEA300AFA2E8 /* WordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,6 +112,7 @@
 				B7C03F00283C06DA006EE412 /* Info.plist */,
 				B7C03EF8283C06D9006EE412 /* build_your_vocabulary.xcdatamodeld */,
 				B795750F283D3CEF00371379 /* GoogleService-Info.plist */,
+				B7E6920E29AD116E000D6164 /* Constants.swift */,
 			);
 			path = BuildYourVocabulary;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				B79A08D62988642C007E64AB /* HexStringConverter.swift in Sources */,
 				B70737692935381400655C53 /* CdWord+CoreDataProperties.swift in Sources */,
 				B7EAF056286CBEA300AFA2E8 /* WordManager.swift in Sources */,
+				B7E6920F29AD116E000D6164 /* Constants.swift in Sources */,
 				B7C03EFA283C06D9006EE412 /* build_your_vocabulary.xcdatamodeld in Sources */,
 				B7C70B4C2875ED99002B7631 /* WordModel.swift in Sources */,
 			);
