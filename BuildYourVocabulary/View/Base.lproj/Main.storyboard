@@ -83,7 +83,7 @@
             </objects>
             <point key="canvasLocation" x="970" y="429"/>
         </scene>
-        <!--Vocabulary-->
+        <!--Vocabulary View Controller-->
         <scene sceneID="NbQ-9P-gku">
             <objects>
                 <viewController id="HnC-48-GPG" customClass="VocabularyViewController" customModule="BuildYourVocabulary" customModuleProvider="target" sceneMemberID="viewController">
@@ -133,7 +133,7 @@
                             <constraint firstItem="sCm-yw-Jkc" firstAttribute="bottom" secondItem="Z07-Qx-jYY" secondAttribute="bottom" id="uA7-Sw-Pqh"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Vocabulary" id="2Rf-0C-f4D"/>
+                    <navigationItem key="navigationItem" id="2Rf-0C-f4D"/>
                     <connections>
                         <outlet property="mySearchBar" destination="Oxp-B4-0T4" id="CUv-ue-IL3"/>
                         <outlet property="tableView" destination="sCm-yw-Jkc" id="UTz-Xc-V2f"/>
@@ -302,7 +302,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tF4-Vy-970"/>
+        <segue reference="tDd-HR-3gg"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">

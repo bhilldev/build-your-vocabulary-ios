@@ -16,8 +16,31 @@ class WelcomeViewController: UIViewController, UISearchBarDelegate {
         title = "Welcome"
        
     }
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print("hello")
+    override func willMove(toParent parent: UIViewController?) {
+        super.willMove(toParent: parent)
+        if parent == nil {
+            // The back button was pressed or interactive gesture used
+            self.setNavBarAppearance(
+                backgroundColor: UIColor.systemGray2,
+                foregroundColor: UIColor.black
+            )
+        }
+    }
+    
+    
+    
+    func setNavBarAppearance(backgroundColor: UIColor, foregroundColor: UIColor) {
+        // This will change the navigation bar background color
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = backgroundColor
+                
+        // This will alter the navigation bar title appearance
+        let titleAttribute = [NSAttributedString.Key.font:  UIFont.systemFont(ofSize: 25, weight: .bold), NSAttributedString.Key.foregroundColor: foregroundColor]
+        
+        appearance.largeTitleTextAttributes = titleAttribute
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
 
 }

@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class VocabularyViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
     
     var wordManager = WordManager()
@@ -33,9 +32,23 @@ class VocabularyViewController: UIViewController, UISearchBarDelegate, UITableVi
         
         self.tableView.backgroundColor = K.TableViewColors.tableViewBackgroundColorHex
         self.setSearchBarAppearance()
-        self.setNavBarAppearance()
+        self.setNavBarAppearance(
+            backgroundColor: K.NavBarColors.navBarBackgroundColor,
+            foregroundColor: K.NavBarColors.navBarForegroundColor
+        )
         self.fetchWords()
         
+    }
+    
+    override func willMove(toParent parent: UIViewController?) {
+        super.willMove(toParent: parent)
+        if parent == nil {
+            // The back button was pressed or interactive gesture used
+            self.setNavBarAppearance(
+                backgroundColor: UIColor.darkGray,
+                foregroundColor: UIColor.black
+            )
+        }
     }
     
     func setSearchBarAppearance() {
@@ -43,17 +56,16 @@ class VocabularyViewController: UIViewController, UISearchBarDelegate, UITableVi
         mySearchBar.searchTextField.backgroundColor = K.SearchBarColors.searchBarTextFieldBackgroundHex
     }
     
-    func setNavBarAppearance() {
+    func setNavBarAppearance(backgroundColor: UIColor, foregroundColor: UIColor) {
         // This will change the navigation bar background color
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = K.NavBarColors.navBarBackgroundColor
+        appearance.backgroundColor = backgroundColor
                 
         // This will alter the navigation bar title appearance
-        let titleAttribute = [NSAttributedString.Key.font:  UIFont.systemFont(ofSize: 25, weight: .bold), NSAttributedString.Key.foregroundColor: K.NavBarColors.navBarForegroundColor]
+        let titleAttribute = [NSAttributedString.Key.font:  UIFont.systemFont(ofSize: 25, weight: .bold), NSAttributedString.Key.foregroundColor: foregroundColor]
         
         appearance.largeTitleTextAttributes = titleAttribute
-
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
@@ -76,11 +88,11 @@ class VocabularyViewController: UIViewController, UISearchBarDelegate, UITableVi
         wordManager.fetchWordDefinition(word: mySearchBar.text!)
         mySearchBar.endEditing(true)
     }
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        if errorMessage.isHidden == false {
-            errorMessage.isHidden = true
-        }
-    }
+//    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+//        if errorMessage.isHidden == false {
+//            errorMessage.isHidden = true
+//        }
+//    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return tableViewData.count
