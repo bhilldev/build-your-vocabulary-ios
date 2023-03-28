@@ -83,7 +83,7 @@
             </objects>
             <point key="canvasLocation" x="970" y="429"/>
         </scene>
-        <!--Vocabulary View Controller-->
+        <!--Vocabulary-->
         <scene sceneID="NbQ-9P-gku">
             <objects>
                 <viewController id="HnC-48-GPG" customClass="VocabularyViewController" customModule="BuildYourVocabulary" customModuleProvider="target" sceneMemberID="viewController">
@@ -133,7 +133,7 @@
                             <constraint firstItem="sCm-yw-Jkc" firstAttribute="bottom" secondItem="Z07-Qx-jYY" secondAttribute="bottom" id="uA7-Sw-Pqh"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="2Rf-0C-f4D"/>
+                    <navigationItem key="navigationItem" title="Vocabulary" id="2Rf-0C-f4D"/>
                     <connections>
                         <outlet property="mySearchBar" destination="Oxp-B4-0T4" id="CUv-ue-IL3"/>
                         <outlet property="tableView" destination="sCm-yw-Jkc" id="UTz-Xc-V2f"/>
@@ -141,7 +141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DaA-IR-Zla" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2418.840579710145" y="99.776785714285708"/>
+            <point key="canvasLocation" x="2436" y="100"/>
         </scene>
         <!--WelcomeViewController-->
         <scene sceneID="sdm-zm-fZK">
