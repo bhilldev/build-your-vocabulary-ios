@@ -149,7 +149,7 @@ class VocabularyViewController: UIViewController, UISearchBarDelegate, UITableVi
         
         if editingStyle == UITableViewCell.EditingStyle.delete {
             //Which word to remove
-            let wordToRemove = tableViewData[indexPath.row]
+            let wordToRemove = tableViewData[indexPath.section]
             //Remove the word
             self.context.delete(wordToRemove)
             do {
