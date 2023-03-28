@@ -13,16 +13,19 @@ protocol WordManagerDelegate {
 }
 
 struct WordManager {
+    
     let wordUrl = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/"
     var delegate: WordManagerDelegate?
     
     func fetchWordDefinition(word: String){
-        let urlString = "\(wordUrl)\(word)?key=35d770ac-3c83-43a4-9aff-2bee78c32610"
-        performRequest(with: urlString)
+        let urlBeforePercentEncoding = "\(wordUrl)\(word)?key=35d770ac-3c83-43a4-9aff-2bee78c32610"
+        performRequest(with: urlBeforePercentEncoding)
     }
     
-    func performRequest(with urlString: String) {
-        if let url = URL(string: urlString) {
+    func performRequest(with urlBeforePercentEncoding: String) {
+
+        if let urlString = urlBeforePercentEncoding.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed), let url = URL(string: urlString) {
+            
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { (data, response, error) in
                 if error != nil {
@@ -42,9 +45,9 @@ struct WordManager {
     
     func parseJSON(_ wordData: Data) -> WordModel? {
         let decoder = JSONDecoder()
-        
         do {
             let decodedData = try decoder.decode([WordData].self, from: wordData)
+            
             let definition = decodedData[0].shortdef[0]
             let word = WordModel(wordDefinition: definition)
             return word
