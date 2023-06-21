@@ -52,6 +52,7 @@ class VocabularyViewController: UIViewController, UISearchBarDelegate, UITableVi
     }
     
     func setSearchBarAppearance() {
+        mySearchBar.autocapitalizationType = .none
         mySearchBar.barTintColor = K.SearchBarColors.searchBarBackgroundColorHex
         mySearchBar.searchTextField.backgroundColor = K.SearchBarColors.searchBarTextFieldBackgroundHex
     }
