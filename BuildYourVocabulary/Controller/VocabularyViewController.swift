@@ -28,6 +28,7 @@ class VocabularyViewController: UIViewController, UISearchBarDelegate, UITableVi
         
         mySearchBar.delegate = self
         tableView.dataSource = self
+        tableView.register(DefinitionTableViewCell.nib(), forCellReuseIdentifier: DefinitionTableViewCell.identifier)
         tableView.delegate = self
         
         self.tableView.backgroundColor = K.TableViewColors.tableViewBackgroundColorHex
@@ -117,12 +118,11 @@ class VocabularyViewController: UIViewController, UISearchBarDelegate, UITableVi
         
         return cell
         } else {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else {return UITableViewCell()}
-            cell.textLabel?.text = tableViewData[indexPath.section].searchedWordDefinition
-            cell.backgroundColor = K.TableViewColors.definitionCellBackgroundColorHex
-            cell.textLabel?.textColor = K.TableViewColors.definitionCellTextColorHex
-            self.allowMultipleLines(tableViewCell: cell)
-            return cell
+            guard let customCell = tableView.dequeueReusableCell(withIdentifier: DefinitionTableViewCell.identifier, for: indexPath) as? DefinitionTableViewCell
+            else {return UITableViewCell()}
+                    customCell.configure(descriptor: "verb", definition: tableViewData[indexPath.section].searchedWordDefinition!)
+            customCell.backgroundColor = K.TableViewColors.definitionCellBackgroundColorHex
+            return customCell
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -13,6 +13,8 @@
 		B74FD2DB283D2E0B00DABD10 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74FD2DA283D2E0B00DABD10 /* LoginViewController.swift */; };
 		B74FD2DF283D39EA00DABD10 /* VocabularyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74FD2DE283D39EA00DABD10 /* VocabularyViewController.swift */; };
 		B760877C286E26B9000DCCFA /* WordrData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B760877B286E26B9000DCCFA /* WordrData.swift */; };
+		B76E7BF62A44E102005F4E55 /* DefinitionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76E7BF42A44E102005F4E55 /* DefinitionTableViewCell.swift */; };
+		B76E7BF72A44E102005F4E55 /* DefinitionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76E7BF52A44E102005F4E55 /* DefinitionTableViewCell.xib */; };
 		B7957510283D3CEF00371379 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B795750F283D3CEF00371379 /* GoogleService-Info.plist */; };
 		B7957513283D43A900371379 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B7957512283D43A900371379 /* FirebaseAuth */; };
 		B79A08D62988642C007E64AB /* HexStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79A08D52988642C007E64AB /* HexStringConverter.swift */; };
@@ -35,6 +37,8 @@
 		B74FD2DA283D2E0B00DABD10 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B74FD2DE283D39EA00DABD10 /* VocabularyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyViewController.swift; sourceTree = "<group>"; };
 		B760877B286E26B9000DCCFA /* WordrData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordrData.swift; sourceTree = "<group>"; };
+		B76E7BF42A44E102005F4E55 /* DefinitionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionTableViewCell.swift; sourceTree = "<group>"; };
+		B76E7BF52A44E102005F4E55 /* DefinitionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DefinitionTableViewCell.xib; sourceTree = "<group>"; };
 		B795750F283D3CEF00371379 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B79A08D52988642C007E64AB /* HexStringConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexStringConverter.swift; sourceTree = "<group>"; };
 		B7C03EEC283C06D9006EE412 /* BuildYourVocabulary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuildYourVocabulary.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +117,8 @@
 				B7C03EF8283C06D9006EE412 /* build_your_vocabulary.xcdatamodeld */,
 				B795750F283D3CEF00371379 /* GoogleService-Info.plist */,
 				B7E6920E29AD116E000D6164 /* Constants.swift */,
+				B76E7BF42A44E102005F4E55 /* DefinitionTableViewCell.swift */,
+				B76E7BF52A44E102005F4E55 /* DefinitionTableViewCell.xib */,
 			);
 			path = BuildYourVocabulary;
 			sourceTree = "<group>";
@@ -193,6 +199,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B76E7BF72A44E102005F4E55 /* DefinitionTableViewCell.xib in Resources */,
 				B7C03EFF283C06DA006EE412 /* LaunchScreen.storyboard in Resources */,
 				B7957510283D3CEF00371379 /* GoogleService-Info.plist in Resources */,
 				B7C03EFC283C06DA006EE412 /* Assets.xcassets in Resources */,
@@ -219,6 +226,7 @@
 				B70737692935381400655C53 /* CdWord+CoreDataProperties.swift in Sources */,
 				B7EAF056286CBEA300AFA2E8 /* WordManager.swift in Sources */,
 				B7E6920F29AD116E000D6164 /* Constants.swift in Sources */,
+				B76E7BF62A44E102005F4E55 /* DefinitionTableViewCell.swift in Sources */,
 				B7C03EFA283C06D9006EE412 /* build_your_vocabulary.xcdatamodeld in Sources */,
 				B7C70B4C2875ED99002B7631 /* WordModel.swift in Sources */,
 			);
